@@ -7,7 +7,7 @@
   "type": "module",
   "files": ["dist", "templates"],
   "bin": {
-    "create-coputo": "./dist/index.cjs"
+    "create-coputo": "./dist/index.js"
   },
   "scripts": {
     "build": "tsup src/index.ts --dts --format cjs,esm",
