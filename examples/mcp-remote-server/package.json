@@ -22,9 +22,7 @@
       "require": "./dist/index.js"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "sideEffects": false,
   "dependencies": {
     "@coputo/core": "workspace:*",
