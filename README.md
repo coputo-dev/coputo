@@ -239,3 +239,9 @@ app.register(coputo, {
 ## 💬 Support
 
 Questions or feedback? Join our [Coputo Discord](https://discord.gg/EWS2k7zy) community🙌
+
+---
+
+## 📜 License
+
+Elastic-2.0
