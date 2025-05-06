@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "create-coputo",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "build": "tsup src/index.ts --dts --format cjs,esm",
@@ -22,7 +22,9 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "dependencies": {
     "@coputo/core": "workspace:*",

@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "example-mcp-remove-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "build": "tsup src/index.ts --dts --format cjs,esm",
@@ -22,7 +22,9 @@
       "require": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "dependencies": {
     "@coputo/core": "workspace:*",
