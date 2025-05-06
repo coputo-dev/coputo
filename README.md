@@ -9,12 +9,12 @@ Coputo is a framework that makes it easy to run a remote MCP server in TypeScrip
 npm create coputo@latest
 ```
 
-| Command     | Description                    |
-| ----------- | ------------------------------ |
-| `npm dev`   | Run Fastify server with HMR    |
-| `npm build` | Build CJS & ESM bundles + d.ts |
-| `npm test`  | Run unit tests (Vitest)        |
-| `npm lint`  | Biome lint --apply             |
+| Command      | Description                    |
+| ------------ | ------------------------------ |
+| `pnpm dev`   | Run Fastify server with HMR    |
+| `pnpm build` | Build CJS & ESM bundles + d.ts |
+| `pnpm test`  | Run unit tests (Vitest)        |
+| `pnpm lint`  | Biome lint --apply             |
 
 > **Node 20+** and **pnpm 9+** are required.
 
