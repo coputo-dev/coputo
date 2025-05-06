@@ -3,7 +3,7 @@
     "access": "public"
   },
   "name": "create-coputo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "files": ["dist", "templates"],
   "bin": {
