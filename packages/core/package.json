@@ -1,0 +1,33 @@
+{
+  "private": false,
+  "name": "@coputo/core",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "dev": "tsup src/index.ts --watch --dts --format esm",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "lint": "biome check src --apply",
+    "format": "biome format . --write",
+    "prepare": "pnpm run build"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "sideEffects": false,
+  "dependencies": {
+    "@types/json-schema": "^7.0.15",
+    "json-schema": "^0.4.0",
+    "zod": "^3.24.3",
+    "zod-to-json-schema": "^3.24.5"
+  }
+}

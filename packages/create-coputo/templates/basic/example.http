@@ -1,0 +1,82 @@
+### ─────────────────────────────────────────────
+### POST /api/mcpServerAdapterTokens
+### ─────────────────────────────────────────────
+POST http://localhost:3000/api/mcpServerAdapterTokens
+Content-Type: application/json
+
+{
+  "name": "example",
+  "token": "example-token"
+}
+
+### ─────────────────────────────────────────────
+### POST /api/mcp tools/list
+### ─────────────────────────────────────────────
+POST http://localhost:3000/api/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "id": "example",
+  "method": "tools/list",
+  "params": {}
+}
+
+### ─────────────────────────────────────────────
+### POST /api/mcp tools/call example:auth
+### ─────────────────────────────────────────────
+POST http://localhost:3000/api/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "id": "1",
+  "method": "tools/call",
+  "params": {
+    "name": "example:auth",
+    "arguments": {
+    }
+  }
+}
+
+### ─────────────────────────────────────────────
+### POST /api/mcp tools/call calc:add
+### ─────────────────────────────────────────────
+POST http://localhost:3000/api/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "id": "1",
+  "method": "tools/call",
+  "params": {
+    "name": "calc:add",
+    "arguments": {
+      "a": 1,
+      "b": 2
+    }
+  }
+}
+
+### ─────────────────────────────────────────────
+### POST /api/mcp tools/call calc:sub
+### ─────────────────────────────────────────────
+POST http://localhost:3000/api/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "id": "1",
+  "method": "tools/call",
+  "params": {
+    "name": "calc:sub",
+    "arguments": {
+      "a": 2,
+      "b": 1
+    }
+  }
+}
