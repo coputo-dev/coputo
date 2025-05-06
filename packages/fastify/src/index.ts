@@ -23,7 +23,7 @@ export interface CoputoFastifyOpts {
   version?: string;
   mcpServers?: McpServerSchema[];
   fetchTenantId?: (req: FastifyRequest) => Promise<string>;
-  getCypherKey?: () => Promise<string>;
+  getCipherKey?: () => Promise<string>;
   mcpServerAdapterTokenStore?: McpServerAdapterTokenStoreSchema;
 }
 
@@ -40,7 +40,7 @@ const plugin: FastifyPluginAsync<CoputoFastifyOpts> = async (
     fetchTenantId = async () => {
       return "anonymous";
     },
-    getCypherKey = async () => {
+    getCipherKey = async () => {
       if (cypherKey != null) {
         return cypherKey;
       }
@@ -59,13 +59,13 @@ const plugin: FastifyPluginAsync<CoputoFastifyOpts> = async (
       mcpServers,
       mcpServerAdapterTokenStore,
       fetchTenantId,
-      getCypherKey,
+      getCipherKey,
     }),
 
     await routeMcpServerAdapterToken({
       mcpServerAdapterTokenStore,
       fetchTenantId,
-      getCypherKey,
+      getCipherKey,
     }),
   );
 };

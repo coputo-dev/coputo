@@ -8,13 +8,13 @@ import type { McpServerAdapterTokenStoreSchema } from "@coputo/core";
 export default async function route({
   mcpServerAdapterTokenStore,
   fetchTenantId,
-  getCypherKey,
+  getCipherKey,
 }: {
   mcpServerAdapterTokenStore: McpServerAdapterTokenStoreSchema;
   fetchTenantId: (
     req: FastifyRequest,
   ) => Promise<string | undefined> | string | undefined;
-  getCypherKey: () => Promise<string> | string;
+  getCipherKey: () => Promise<string> | string;
 }) {
   return fp(async (f) => {
     f.register(async (instance) => {
@@ -36,7 +36,7 @@ export default async function route({
             .parse(req.body);
 
           mcpServerAdapterTokenStore.set({
-            cypherKey: await getCypherKey(),
+            cypherKey: await getCipherKey(),
             tenantId,
             name: body.name,
             token: body.token,

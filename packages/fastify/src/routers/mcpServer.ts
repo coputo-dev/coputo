@@ -15,14 +15,14 @@ export default async function route({
   mcpServers = [],
   mcpServerAdapterTokenStore,
   fetchTenantId,
-  getCypherKey,
+  getCipherKey,
 }: {
   name?: string;
   version?: string;
   mcpServers: McpServerSchema[];
   mcpServerAdapterTokenStore: McpServerAdapterTokenStoreSchema;
   fetchTenantId: (req: FastifyRequest) => Promise<string>;
-  getCypherKey: () => Promise<string>;
+  getCipherKey: () => Promise<string>;
 }) {
   const root = new McpServer({ name, version });
   const transport = new StreamableHTTPServerTransport({
@@ -38,7 +38,7 @@ export default async function route({
         // biome-ignore lint/suspicious/noExplicitAny: <explanation>
         async (args: any) => {
           const authToken = await mcpServerAdapterTokenStore.get({
-            cypherKey: await getCypherKey(),
+            cypherKey: await getCipherKey(),
             tenantId: args._meta.tenantId,
             name: server.name,
           });
