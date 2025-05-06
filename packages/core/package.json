@@ -1,5 +1,7 @@
 {
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "name": "@coputo/core",
   "version": "0.1.0",
   "type": "module",
@@ -22,9 +24,7 @@
       "require": "./dist/index.js"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "sideEffects": false,
   "dependencies": {
     "@types/json-schema": "^7.0.15",

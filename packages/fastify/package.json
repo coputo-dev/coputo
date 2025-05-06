@@ -1,5 +1,7 @@
 {
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "name": "@coputo/fastify",
   "version": "0.1.0",
   "type": "module",
@@ -22,9 +24,7 @@
       "require": "./dist/index.js"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "sideEffects": false,
   "dependencies": {
     "@coputo/core": "workspace:*",
