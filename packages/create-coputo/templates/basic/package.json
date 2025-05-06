@@ -24,8 +24,8 @@
   "files": ["dist"],
   "sideEffects": false,
   "dependencies": {
-    "@coputo/core": "workspace:*",
-    "@coputo/fastify": "workspace:*",
+    "@coputo/core": "*",
+    "@coputo/fastify": "*",
     "fastify": "^5",
     "pino-pretty": "^13",
     "zod": "^3"

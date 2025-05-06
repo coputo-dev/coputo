@@ -16,9 +16,7 @@ test("create-coputo installs deps from registry", async () => {
     cwd: tmpDir,
   });
 
-  const appPkg = await import(
-    path.join(tmpDir, "my-awesome-app", "package.json")
-  );
+  const pkg = await import(path.join(tmpDir, "my-awesome-app", "package.json"));
 
-  expect(appPkg.default.dependencies["@coputo/core"]).toBeDefined();
+  expect(pkg.default.dependencies["@coputo/core"]).toBeDefined();
 });
