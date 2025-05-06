@@ -5,6 +5,10 @@
   "name": "create-coputo",
   "version": "0.1.0",
   "type": "module",
+  "files": ["dist", "templates"],
+  "bin": {
+    "create-coputo": "./dist/index.cjs"
+  },
   "scripts": {
     "build": "tsup src/index.ts --dts --format cjs,esm",
     "dev": "tsup src/index.ts --watch --dts --format esm",
@@ -24,7 +28,6 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist"],
   "sideEffects": false,
   "dependencies": {
     "@coputo/core": "workspace:*",
