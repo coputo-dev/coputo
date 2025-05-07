@@ -4,6 +4,7 @@
   "name": "coputo",
   "version": "0.1.0",
   "type": "module",
+  "packageManager": "pnpm@10.0.0",
   "dependencies": {
     "@types/node": "^22.15.3",
     "vite": "^6.3.4"
