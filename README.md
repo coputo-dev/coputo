@@ -1,7 +1,8 @@
 # Coputo
 
 **The TypeScript Remote MCP server framework**
-Coputo is a framework that makes it easy to run a remote MCP server in TypeScript. You can run Coputo locally or in the cloud.
+
+Build remote Model Context Protocol servers in seconds with a modern TypeScript stack.
 
 ## 📦 Getting Started
 
@@ -9,72 +10,34 @@ Coputo is a framework that makes it easy to run a remote MCP server in TypeScrip
 npm create coputo@latest
 ```
 
-| Command         | Description                    |
-| --------------- | ------------------------------ |
-| `npm run dev`   | Run Fastify server with HMR    |
-| `npm run build` | Build CJS & ESM bundles + d.ts |
-| `npm run test`  | Run unit with Vitest           |
-| `npm run lint`  | Run lint with Biome            |
+## ✏️ Build an MCP server in seconds
 
-> **Node 20+** and **pnpm 9+** are required.
-
-### Quick Test
-
-Open `example.http` (VS Code + [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)) and fire the ready‑made requests against your running Coputo server.
-
----
-
-## 🛠️ How to write MCP servers
-
-You can write MCP servers in a few lines of code. The following example shows how to create a server including a tool.
+You can write an MCP server in a few lines of code.
 
 ```ts
-import Fastify from 'fastify';
-import coputo from '@coputo/fastify';
-import { z } from 'zod';
-import {
-  buildMcpToolInputSchema,
-  replySuccess,
-  replyFailure,
-} from '@coputo/core';
-
-// Zod schema definitions
-const AddSchema = z.object({
-  a: z.number(),
-  b: z.number(),
-  _meta: z.object({ tenantId: z.string() }),
+const EchoSchema = z.object({
+  text: z.string(),
 });
 
-// Fastify instance
-const app = Fastify({ logger: true });
-
-// MCP server & tool registration
 app.register(coputo, {
   mcpServers: [
     {
-      name: 'calc',
+      name: 'echo',
       tools: [
         {
-          // tool metadata
           schema: {
-            name: 'calc:add',
-            description: 'Add two numbers',
-            inputSchema: buildMcpToolInputSchema({ zodSchema: AddSchema }),
+            name: 'echo:text',
+            description: 'Echo back the provided text.',
+            inputSchema: buildMcpToolInputSchema({ zodSchema: EchoSchema }),
           },
-          // implementation
-          inputZodSchema: AddSchema,
+          inputZodSchema: EchoSchema,
           async run({ args }) {
-            const res = args.a + args.b;
-            return replySuccess({ data: JSON.stringify(res) });
+            return replySuccess({ data: args.text });
           },
         },
       ],
     },
   ],
-});
-
-app.listen({ port: 3000 }, () => {
-  console.log('🚀 MCP server running on http://localhost:3000');
 });
 ```
 
@@ -90,16 +53,13 @@ Accept: application/json, text/event-stream
   "id": "1",
   "method": "tools/call",
   "params": {
-    "name": "calc:add",
+    "name": "echo:text",
     "arguments": {
-      "a": 1,
-      "b": 2
+      "text": "hi"
     }
   }
 }
 ```
-
----
 
 ## 🔐 Tenant‑scoped SaaS credential storage
 
@@ -234,14 +194,6 @@ app.register(coputo, {
 });
 ```
 
----
-
 ## 💬 Support
 
-Questions or feedback? Join our [Coputo Discord](https://discord.gg/EWS2k7zy) community🙌
-
----
-
-## 📜 License
-
-Elastic-2.0
+Join our [Coputo Discord](https://discord.gg/EWS2k7zy) community🙌
