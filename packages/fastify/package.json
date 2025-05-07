@@ -2,7 +2,7 @@
   "publishConfig": { "access": "public" },
   "license": "Elastic-2.0",
   "name": "@coputo/fastify",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "files": ["dist"],
   "scripts": {

@@ -1,15 +1,10 @@
 {
-  "publishConfig": {
-    "access": "public"
-  },
+  "publishConfig": { "access": "public" },
   "license": "Elastic-2.0",
   "name": "create-coputo",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "type": "module",
-  "files": [
-    "dist",
-    "templates"
-  ],
+  "files": ["dist", "templates"],
   "scripts": {
     "build": "tsup src/index.ts --dts --format esm,cjs",
     "dev": "tsup src/index.ts --watch --dts --format esm",
