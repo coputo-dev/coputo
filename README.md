@@ -4,6 +4,8 @@
 
 Build remote Model Context Protocol servers in seconds with a modern TypeScript stack.
 
+https://coputo.dev
+
 ## 📦 Getting Started
 
 ```bash
@@ -64,6 +66,8 @@ Accept: application/json, text/event-stream
 ## 🔐 Tenant‑scoped SaaS credential storage
 
 Coputo exposes a **built‑in HTTP endpoint** so each tenant can securely persist API keys, or any secret required by your tools.
+
+![](https://www.coputo.dev/index/kvs.png)
 
 ### Set and get credentials
 
