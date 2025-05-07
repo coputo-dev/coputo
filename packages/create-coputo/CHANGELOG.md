@@ -1,5 +1,11 @@
 # create-coputo
 
+## 0.1.9
+
+### Patch Changes
+
+- change settings
+
 ## 0.1.8
 
 ### Patch Changes
