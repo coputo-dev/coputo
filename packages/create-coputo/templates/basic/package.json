@@ -10,8 +10,7 @@
     "dev": "tsx watch src/index.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run --passWithNoTests",
-    "lint": "biome check src --apply",
-    "format": "biome format . --write"
+    "lint": "biome check . "
   },
   "types": "./dist/index.d.ts",
   "exports": {

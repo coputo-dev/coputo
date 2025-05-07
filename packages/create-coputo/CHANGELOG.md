@@ -1,5 +1,14 @@
 # create-coputo
 
+## 0.1.10
+
+### Patch Changes
+
+- change settings
+- Updated dependencies
+  - @coputo/core@0.1.3
+  - @coputo/fastify@0.1.3
+
 ## 0.1.9
 
 ### Patch Changes

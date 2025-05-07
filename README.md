@@ -13,8 +13,8 @@ npm create coputo@latest
 | --------------- | ------------------------------ |
 | `npm run dev`   | Run Fastify server with HMR    |
 | `npm run build` | Build CJS & ESM bundles + d.ts |
-| `npm run test`  | Run unit tests (Vitest)        |
-| `npm run lint`  | Biome lint --apply             |
+| `npm run test`  | Run unit with Vitest           |
+| `npm run lint`  | Run lint with Biome            |
 
 > **Node 20+** and **pnpm 9+** are required.
 

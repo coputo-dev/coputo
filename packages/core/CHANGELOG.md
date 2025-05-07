@@ -1,5 +1,11 @@
 # @coputo/core
 
+## 0.1.3
+
+### Patch Changes
+
+- change settings
+
 ## 0.1.2
 
 ### Patch Changes

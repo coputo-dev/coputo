@@ -1,8 +1,10 @@
 {
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "Elastic-2.0",
   "name": "create-coputo",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "type": "module",
   "files": ["dist", "templates"],
   "scripts": {
@@ -10,8 +12,7 @@
     "dev": "tsup src/index.ts --watch --dts --format esm",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
-    "lint": "biome check src --apply",
-    "format": "biome format . --write"
+    "lint": "biome check ."
   },
   "types": "./dist/index.d.ts",
   "exports": {
