@@ -1,34 +1,42 @@
 {
   "private": true,
-  "name": "example-mcp-remove-server",
-  "version": "0.1.1",
+  "license": "Elastic-2.0",
+  "name": "example-remove-mcp-server",
+  "version": "0.1.0",
   "type": "module",
+  "files": ["dist"],
   "scripts": {
-    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "build": "tsup src/index.ts --dts --format esm,cjs",
     "dev": "tsx watch src/index.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run --passWithNoTests",
     "lint": "biome check src --apply",
-    "format": "biome format . --write",
-    "prepare": "pnpm run build"
+    "format": "biome format . --write"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist"],
-  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "@coputo/core": "workspace:*",
     "@coputo/fastify": "workspace:*",
     "fastify": "^5.3.2",
     "pino-pretty": "^13.0.0",
     "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "biome": "^0.3.3",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.1.2"
   }
 }

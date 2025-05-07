@@ -50,17 +50,10 @@ async function scaffold({
   if (skipInstall !== true) {
     console.log("📦 Installing dependencies...");
 
-    await execa(
-      "pnpm",
-      [
-        "install",
-        "--config.link-workspace-packages=false", // 強制的にレジストリ解決
-      ],
-      { cwd: dest, stdio: "inherit" },
-    );
+    await execa("npm", ["install"], { cwd: dest, stdio: "inherit" });
   }
 
-  console.log(`\n✨ All set! Next steps:\n  cd ${appName}\n  pnpm dev\n`);
+  console.log(`\n✨ All set! Next steps:\n  cd ${appName}\n  npm run dev\n`);
 }
 
 const program = new Command()

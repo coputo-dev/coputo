@@ -2,24 +2,22 @@
   "publishConfig": {
     "access": "public"
   },
+  "license": "Elastic-2.0",
   "name": "create-coputo",
   "version": "0.1.7",
   "type": "module",
-  "files": ["dist", "templates"],
-  "bin": {
-    "create-coputo": "./dist/index.js"
-  },
+  "files": [
+    "dist",
+    "templates"
+  ],
   "scripts": {
-    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "build": "tsup src/index.ts --dts --format esm,cjs",
     "dev": "tsup src/index.ts --watch --dts --format esm",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "lint": "biome check src --apply",
-    "format": "biome format . --write",
-    "prepare": "pnpm run build"
+    "format": "biome format . --write"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
@@ -28,7 +26,12 @@
       "require": "./dist/index.cjs"
     }
   },
-  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "create-coputo": "./dist/index.js"
+  },
   "dependencies": {
     "@coputo/core": "workspace:*",
     "@coputo/fastify": "workspace:*",

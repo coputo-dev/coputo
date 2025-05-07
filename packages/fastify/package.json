@@ -1,31 +1,30 @@
 {
-  "publishConfig": {
-    "access": "public"
-  },
+  "publishConfig": { "access": "public" },
+  "license": "Elastic-2.0",
   "name": "@coputo/fastify",
   "version": "0.1.1",
   "type": "module",
+  "files": ["dist"],
   "scripts": {
     "build": "tsup src/index.ts --dts --format esm,cjs",
     "dev": "tsup src/index.ts --watch --dts --format esm",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "lint": "biome check src --apply",
-    "format": "biome format . --write",
-    "prepare": "pnpm run build"
+    "format": "biome format . --write"
   },
   "main": "./dist/index.js",
-  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist"],
-  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "@coputo/core": "workspace:*",
     "@modelcontextprotocol/sdk": "^1.11.0",
