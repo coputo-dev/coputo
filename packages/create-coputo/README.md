@@ -1,8 +1,8 @@
-# @coputo/core
+# create-coputo
 
-Thank you for using @coputo/core.
+Thank you for using create-coputo.
 
-Please refer to the [documentation](https://github.com/coputo/coputo) for more information on how to use this package.
+Please refer to the [documentation](https://github.com/coputo-dev/coputo) for more information on how to use this package.
 
 ## License
 

@@ -1,5 +1,13 @@
 # @coputo/fastify
 
+## 0.1.4
+
+### Patch Changes
+
+- update README.md
+- Updated dependencies
+  - @coputo/core@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes
