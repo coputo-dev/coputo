@@ -31,7 +31,7 @@ export function buildMcpToolInputSchema<Z extends z.ZodTypeAny>({
   zodSchema,
 }: {
   zodSchema: Z;
-}): mcpToolSchema.McpToolInputDefitionSchema {
+}): mcpToolSchema.McpToolInputDefinitionSchema {
   const obj = zodToJsonSchema(zodSchema, {
     target: "openApi3",
     $refStrategy: "none",
@@ -41,7 +41,7 @@ export function buildMcpToolInputSchema<Z extends z.ZodTypeAny>({
     throw new Error("Zod schema is not converted to an object JSON Schema");
   }
 
-  return mcpToolSchema.McpToolInputDefitionZodSchema.parse({
+  return mcpToolSchema.McpToolInputDefinitionZodSchema.parse({
     type: "object",
     properties: obj.properties,
     required: obj.required,

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const McpToolInputDefitionZodSchema = z.object({
+export const McpToolInputDefinitionZodSchema = z.object({
   type: z.literal("object"),
   properties: z.record(
     z.object({
@@ -10,17 +10,19 @@ export const McpToolInputDefitionZodSchema = z.object({
   ),
   required: z.array(z.string()).optional(),
 });
-export type McpToolInputDefitionSchema = z.infer<
-  typeof McpToolInputDefitionZodSchema
+export type McpToolInputDefinitionSchema = z.infer<
+  typeof McpToolInputDefinitionZodSchema
 >;
 
-export const McpToolDefitionZodSchema = z.object({
+export const McpToolDefinitionZodSchema = z.object({
   name: z.string(),
   description: z.string(),
-  inputSchema: McpToolInputDefitionZodSchema,
+  inputSchema: McpToolInputDefinitionZodSchema,
   annotations: z.record(z.any()).optional(),
 });
-export type McpToolDefitionSchema = z.infer<typeof McpToolDefitionZodSchema>;
+export type McpToolDefinitionSchema = z.infer<
+  typeof McpToolDefinitionZodSchema
+>;
 
 const TextResource = z.object({
   uri: z.string().url(),
@@ -66,7 +68,7 @@ export type McpToolCallResultSchema = z.infer<
 >;
 
 export interface McpToolSchema {
-  schema: McpToolDefitionSchema;
+  schema: McpToolDefinitionSchema;
   inputZodSchema: z.AnyZodObject;
   run: ({
     args,
