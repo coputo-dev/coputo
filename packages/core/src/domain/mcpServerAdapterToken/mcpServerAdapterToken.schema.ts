@@ -47,8 +47,7 @@ export const McpServerAdapterTokenStoreGetZodSchema = z.object({
   cypherKey: z.string(),
   tenantId: z.string(),
   name: z.string(),
-  token: z.string(),
 });
 export type McpServerAdapterTokenStoreGetSchema = z.infer<
-  typeof McpServerAdapterTokenStoreSetZodSchema
+  typeof McpServerAdapterTokenStoreGetZodSchema
 >;
